@@ -44,5 +44,13 @@ public class Alumno {
         return "Alumno{" + "nota=" + notas + ", nome=" + nome + '}';
     }
 
+    public int compareTo(Object o) {
+        Alumno al = (Alumno) o;
+        if (this.nome.compareToIgnoreCase(al.nome) == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
 
 }

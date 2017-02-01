@@ -28,6 +28,7 @@ public class Boletin17 {
         al.aprobadosSuspensos();
         al.notaMayor();
         al.visualizarMedia();
+        al.ordenar();
 
     }
 

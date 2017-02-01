@@ -6,6 +6,7 @@
 package boletin17;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -15,8 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class Ejercicio2 {
 
-    Alumno alumnos[] = new Alumno[2];
-    int notas[] = new int[alumnos.length];
+    private Alumno alumnos[] = new Alumno[2];
+    private int notas[] = new int[alumnos.length];
 
     public String pedirNombre() {
         return JOptionPane.showInputDialog("nombre");
@@ -55,13 +56,36 @@ public class Ejercicio2 {
     }
 
     public void notaMayor() {
-
-            }       
-
-    public void visualizarAlumnosAprobados() {
-        for(int i=0;i<alumnos.length;i++)
-        if(notas[i]>=5)
-        System.out.println((alumnos[i]));
+        int max = 0;
+        for (int i = 0; i < alumnos.length; i++) {
+            if (notas[i] > max) {
+                max = notas[i];
+            }
+        }
+        System.out.println("Nota mas alta= " + max);
     }
 
+    public void visualizarAlumnosAprobados() {
+        for (int i = 0; i < alumnos.length; i++) {
+            if (notas[i] >= 5) {
+                System.out.println((alumnos[i]));
+            }
+        }
+    }
+
+    public void ordenar() {
+        Arrays.sort(notas);
+        System.out.println("Lista de notas:");
+        for (int i = 0; i < alumnos.length; i++) {
+            System.out.println(notas[i]);
+        }
+    }
+
+    public void buscar() {
+        if ((alumnos.contains(new Alumno(pedirNota(), pedirNombre()))) == true) {
+            System.out.println("si esta");
+        } else {
+            System.out.println("no esta");
+        }
+    }
 }
