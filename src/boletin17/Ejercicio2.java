@@ -82,10 +82,17 @@ public class Ejercicio2 {
     }
 
     public void buscar() {
-        if ((alumnos.contains(new Alumno(pedirNota(), pedirNombre()))) == true) {
-            System.out.println("si esta");
-        } else {
-            System.out.println("no esta");
+        Alumno al = new Alumno(0, pedirNombre());
+        int aux = 1;
+        for (int i = 0; i < alumnos.length; i++) {
+            aux = al.compareTo(alumnos[i]);
+            if (aux == 0) {
+                System.out.println(alumnos[i]);
+            }
         }
+        if (aux == 1) {
+            System.out.println("no existe");
+        }
+
     }
 }

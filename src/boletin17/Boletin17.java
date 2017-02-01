@@ -28,7 +28,10 @@ public class Boletin17 {
         al.aprobadosSuspensos();
         al.notaMayor();
         al.visualizarMedia();
+        System.out.println("*****");
         al.ordenar();
+        System.out.println("****");
+        al.buscar();
 
     }
 

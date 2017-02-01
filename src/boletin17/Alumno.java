@@ -5,6 +5,8 @@
  */
 package boletin17;
 
+import java.util.Objects;
+
 /**
  *
  * @author acomesanavila
@@ -44,13 +46,25 @@ public class Alumno {
         return "Alumno{" + "nota=" + notas + ", nome=" + nome + '}';
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + this.notas;
+        hash = 89 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
     public int compareTo(Object o) {
         Alumno al = (Alumno) o;
         if (this.nome.compareToIgnoreCase(al.nome) == 0) {
             return 0;
+        } else if (this.nome.compareToIgnoreCase(al.nome) > 0) {
+            return 1;
         } else {
             return -1;
         }
     }
+
+
 
 }
