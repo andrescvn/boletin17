@@ -87,12 +87,11 @@ public class Ejercicio2 {
         for (int i = 0; i < alumnos.length; i++) {
             aux = al.compareTo(alumnos[i]);
             if (aux == 0) {
-                System.out.println(alumnos[i]);
+                System.out.println(notas[i]);
             }
         }
-        if (aux == 1) {
+        if (aux == 1 | aux==-1) {
             System.out.println("no existe");
         }
-
     }
 }
